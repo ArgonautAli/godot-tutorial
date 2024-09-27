@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://b6cqtdn3483k4"]
+[gd_scene load_steps=15 format=3 uid="uid://b6cqtdn3483k4"]
 
 [ext_resource type="PackedScene" uid="uid://cq0wcky0kquq7" path="res://scenes/player.tscn" id="1_6bqrt"]
 [ext_resource type="PackedScene" uid="uid://cjah3yslok1gf" path="res://scenes/slime.tscn" id="1_yupj1"]
@@ -6,6 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://f84p1mkgwpfa" path="res://scenes/platform.tscn" id="3_v5ou2"]
 [ext_resource type="PackedScene" uid="uid://0n6xw4q5gxym" path="res://scenes/coin.tscn" id="4_fpx5v"]
 [ext_resource type="PackedScene" uid="uid://c84r8u33ga1as" path="res://scenes/killzone.tscn" id="5_kwucy"]
+[ext_resource type="FontFile" uid="uid://b2d802ogy66aj" path="res://assets/fonts/PixelOperator8.ttf" id="7_q76v2"]
+[ext_resource type="Script" path="res://scripts/game_manager.gd" id="8_kea2u"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vm3au"]
 texture = ExtResource("2_m4d0t")
@@ -210,6 +212,19 @@ _data = {
 [node name="Game" type="Node2D"]
 position = Vector2(2, 0)
 
+[node name="Game_manager" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("8_kea2u")
+
+[node name="score" type="Label" parent="Game_manager"]
+offset_left = 763.0
+offset_top = -61.0
+offset_right = 849.0
+offset_bottom = -38.0
+theme_override_colors/font_color = Color(0.00784314, 0.14902, 0.34902, 1)
+theme_override_fonts/font = ExtResource("7_q76v2")
+theme_override_font_sizes/font_size = 8
+
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2(-1, -1)
 tile_set = SubResource("TileSet_6ufk1")
@@ -264,3 +279,26 @@ autoplay = "RESET"
 position = Vector2(233, 4)
 
 [node name="Killzone2" parent="Slime" instance=ExtResource("5_kwucy")]
+
+[node name="Node" type="Node" parent="."]
+
+[node name="falling_hurt" type="Label" parent="Node"]
+offset_left = 378.0
+offset_top = -5.0
+offset_right = 464.0
+offset_bottom = 18.0
+theme_override_colors/font_color = Color(0.00784314, 0.14902, 0.34902, 1)
+theme_override_fonts/font = ExtResource("7_q76v2")
+theme_override_font_sizes/font_size = 8
+text = "Falling hurts
+"
+
+[node name="space" type="Label" parent="Node"]
+offset_left = -134.0
+offset_top = -17.0
+offset_right = -48.0
+offset_bottom = 6.0
+theme_override_colors/font_color = Color(0.00784314, 0.14902, 0.34902, 1)
+theme_override_fonts/font = ExtResource("7_q76v2")
+theme_override_font_sizes/font_size = 8
+text = "Space to jump"
