@@ -280,9 +280,9 @@ position = Vector2(233, 4)
 
 [node name="Killzone2" parent="Slime" instance=ExtResource("5_kwucy")]
 
-[node name="Node" type="Node" parent="."]
+[node name="Labels" type="Node" parent="."]
 
-[node name="falling_hurt" type="Label" parent="Node"]
+[node name="falling_hurt" type="Label" parent="Labels"]
 offset_left = 378.0
 offset_top = -5.0
 offset_right = 464.0
@@ -293,7 +293,7 @@ theme_override_font_sizes/font_size = 8
 text = "Falling hurts
 "
 
-[node name="space" type="Label" parent="Node"]
+[node name="space" type="Label" parent="Labels"]
 offset_left = -134.0
 offset_top = -17.0
 offset_right = -48.0

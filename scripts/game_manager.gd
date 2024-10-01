@@ -6,5 +6,4 @@ var score = 0;
 
 func add_point():
 	score += 1
-	print("score", score)
 	score_label.text = "your score is: " + str(score) + ""
